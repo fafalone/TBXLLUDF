@@ -92,7 +92,7 @@ Module MainModule
         oper(0) = GetXLString12("Welcome to the tB XLL UDF Demo v2.0!")
         oper(1) = GetXLInt12(2)
 
-        Excel12v(xlcAlert, vbNullPtr, 2, oper)
+        Excel12v(xlcAlert, ByVal vbNullPtr, 2, oper)
     
         Dim xDLL(0) As XLOPER12
         Dim dummy(0) As XLOPER12
@@ -116,7 +116,7 @@ Module MainModule
         'https://learn.microsoft.com/en-us/office/client-developer/excel/known-issues-in-excel-xll-development#argument-description-string-truncation-in-the-function-wizard
     
         func1def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func1def) + 1, func1def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func1def) + 1, func1def)
     
         Dim func2def(11) As XLOPER12
         func2def(0) = xDLL(0)
@@ -133,7 +133,7 @@ Module MainModule
     
         'Add dummy string to solve arg help truncation issue
         func2def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func2def) + 1, func2def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func2def) + 1, func2def)
     
         Dim func3def(12) As XLOPER12
         func3def(0) = xDLL(0)
@@ -151,7 +151,7 @@ Module MainModule
     
         'Add dummy string to solve arg help truncation issue
         func3def(12) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func3def) + 1, func3def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func3def) + 1, func3def)
     
         Dim func4def(11) As XLOPER12
         func4def(0) = xDLL(0)
@@ -168,9 +168,9 @@ Module MainModule
     
         'Add dummy string to solve arg help truncation issue
         func4def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func4def) + 1, func4def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func4def) + 1, func4def)
             
-        Excel12v(xlFree, vbNullPtr, 1, xDLL)
+        Excel12v(xlFree, ByVal vbNullPtr, 1, xDLL)
         Return 1
     End Function
 
@@ -178,19 +178,19 @@ Module MainModule
     Public Function xlAutoClose() As Long
         Dim operFunc1(0) As XLOPER12
         operFunc1(0) = GetXLString12(FuncName1)
-        Excel12v(xlfSetName, vbNullPtr, 1, operFunc1)
+        Excel12v(xlfSetName, ByVal vbNullPtr, 1, operFunc1)
     
         Dim operFunc2(0) As XLOPER12
         operFunc2(0) = GetXLString12(FuncName2)
-        Excel12v(xlfSetName, vbNullPtr, 1, operFunc2)
+        Excel12v(xlfSetName, ByVal vbNullPtr, 1, operFunc2)
     
         Dim operFunc3(0) As XLOPER12
         operFunc3(0) = GetXLString12(FuncName3)
-        Excel12v(xlfSetName, vbNullPtr, 1, operFunc3)
+        Excel12v(xlfSetName, ByVal vbNullPtr, 1, operFunc3)
     
         Dim operFunc4(0) As XLOPER12
         operFunc4(0) = GetXLString12(FuncName4)
-        Excel12v(xlfSetName, vbNullPtr, 1, operFunc4)
+        Excel12v(xlfSetName, ByVal vbNullPtr, 1, operFunc4)
     
         Return 1
     End Function
@@ -215,19 +215,19 @@ Module MainModule
     
         xOpers(1) = GetXLString12(FuncName0)
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncRoman0)
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncMult0)
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncString0)
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
     
         'Now re-register udf's as hidden (macro_type=2)
@@ -249,7 +249,7 @@ Module MainModule
         func1def(9) = GetXLString12(FuncName8)
         func1def(10) = GetXLString12(FuncName9)
         func1def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func1def) + 1, func1def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func1def) + 1, func1def)
     
         Dim func2def(11) As XLOPER12
         func2def(0) = xDLL(0)
@@ -264,7 +264,7 @@ Module MainModule
         func2def(9) = GetXLString12(FuncRoman8)
         func2def(10) = GetXLString12(FuncRoman9)
         func2def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func2def) + 1, func2def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func2def) + 1, func2def)
     
         Dim func3def(12) As XLOPER12
         func3def(0) = xDLL(0)
@@ -280,7 +280,7 @@ Module MainModule
         func3def(10) = GetXLString12(FuncMult9)
         func3def(11) = GetXLString12(FuncMult10)
         func3def(12) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func3def) + 1, func3def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func3def) + 1, func3def)
     
         Dim func4def(11) As XLOPER12
         func4def(0) = xDLL(0)
@@ -295,7 +295,7 @@ Module MainModule
         func4def(9) = GetXLString12(FuncString8)
         func4def(10) = GetXLString12(FuncString9)
         func4def(11) = GetXLString12(vbNullString)
-        Excel12v(xlfRegister, vbNullPtr, UBound(func4def) + 1, func4def)
+        Excel12v(xlfRegister, ByVal vbNullPtr, UBound(func4def) + 1, func4def)
     
         'Unregister the new hidden functions...
     
@@ -304,33 +304,33 @@ Module MainModule
         xOpers(1) = GetXLString12(FuncName0)
     
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncRoman0)
     
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncMult0)
     
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         xOpers(1) = GetXLString12(FuncString0)
     
         Excel12v(xlfRegisterId, xRegId(0), 2, xOpers)
-        Excel12v(xlfUnregister, vbNullPtr, 1, xRegId)
+        Excel12v(xlfUnregister, ByVal vbNullPtr, 1, xRegId)
     
         'send alert and clean up
     
         xOpers(0) = GetXLString12("Bye bye to the tB XLL UDF Demo!")
         xOpers(1) = GetXLInt12(2)
 
-        Excel12v(xlcAlert, vbNullPtr, 2, xOpers)
+        Excel12v(xlcAlert, ByVal vbNullPtr, 2, xOpers)
     
-        Excel12v(xlFree, vbNullPtr, 1, xOpers)
-        Excel12v(xlFree, vbNullPtr, 1, xRegId)
-        Excel12v(xlFree, vbNullPtr, 1, xDLL)
+        Excel12v(xlFree, ByVal vbNullPtr, 1, xOpers)
+        Excel12v(xlFree, ByVal vbNullPtr, 1, xRegId)
+        Excel12v(xlFree, ByVal vbNullPtr, 1, xDLL)
     
         Return 1
     End Function
@@ -393,7 +393,7 @@ Module MainModule
                         error = xlerrValue
                     End If
                 End If
-                Excel12v(xlFree, vbNullPtr, 1, xlt)
+                Excel12v(xlFree, ByVal vbNullPtr, 1, xlt)
             Case Else
                 error = xlerrValue
         End Select
@@ -441,7 +441,7 @@ Module MainModule
                         error = xlerrValue
                     End If
                 End If
-                Excel12v(xlFree, vbNullPtr, 1, xlt)
+                Excel12v(xlFree, ByVal vbNullPtr, 1, xlt)
             Case Else
                 error = xlerrValue
         End Select
@@ -476,7 +476,7 @@ Module MainModule
                     error = -1
                     num1 = Xloper12NumValue(xlt(0))
                 End If
-                Excel12v(xlFree, vbNullPtr, 1, xlt)
+                Excel12v(xlFree, ByVal vbNullPtr, 1, xlt)
             Case Else
                 error = xlerrValue
         End Select
@@ -498,7 +498,7 @@ Module MainModule
                     error = -1
                     num2 = Xloper12NumValue(xlt(0))
                 End If
-                Excel12v(xlFree, vbNullPtr, 1, xlt)
+                Excel12v(xlFree, ByVal vbNullPtr, 1, xlt)
             Case Else
                 error = xlerrValue
         End Select
